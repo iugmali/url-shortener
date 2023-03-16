@@ -9,7 +9,7 @@ services:
     container_name: url-shortener
     entrypoint: wait-for-it.sh url-shortener-db:27017 -t 30 -- npm start
     networks:
-      - url-shortener-network
+      - nginx-proxy-manager_default
     volumes:
       - .:/app
       - /app/node_modules
@@ -23,7 +23,7 @@ services:
     restart: always
     container_name: url-shortener-db
     networks:
-      - url-shortener-network
+      - nginx-proxy-manager_default
     volumes:
       - url-db:/data/db
     environment:
@@ -34,6 +34,5 @@ volumes:
   url-db:
 
 networks:
-  url-shortener-network:
-    name: url-shortener-network
-    driver: bridge
+  nginx-proxy-manager_default:
+    external: true
