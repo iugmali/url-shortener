@@ -5,7 +5,7 @@ const router = express.Router();
 
 // Redireciona para a documentação da API
 router.get("/", (req, res) => {
-  return res.redirect(process.env.BASE_URL + "/docs")
+  return res.redirect("https://app.nosmove.com")
 })
 
 router.post("/urls", shortenUrl);
