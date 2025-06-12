@@ -6,7 +6,7 @@ services:
     build:
       context: .
     container_name: url-shortener
-#    entrypoint: wait-for-it.sh url-shortener-db:27017 -t 30 -- npm run dev
+    entrypoint: wait-for-it.sh url-shortener-db:27017 -t 30 -- npm run dev
     networks:
       - url-shortener-network
     volumes:
