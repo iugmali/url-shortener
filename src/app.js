@@ -14,7 +14,7 @@ connectDb()
 
 app.use(cors({
   origin: process.env.CORS_ORIGIN,
-  optionsSuccessStatus: 200
+  optionsSuccessStatus: 204
 }))
 app.use(express.json())
 app.use("/docs", swaggerUI.serve, swaggerUI.setup(specs))
